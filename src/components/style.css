@@ -1,0 +1,15 @@
+
+.logo{
+    color: red;
+}
+
+h2{
+    color: rgb(255, 51, 0);
+}
+
+
+.greeting {
+    margin-left: 2rem;
+    color: blue;
+    font-size: 1.3rem;
+}
