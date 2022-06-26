@@ -1,4 +1,7 @@
-
+/* 
+            NAVBAR 
+============================
+*/
 .logo{
     color: red;
 }
@@ -12,4 +15,55 @@ h2{
     margin-left: 2rem;
     color: blue;
     font-size: 1.3rem;
+}
+
+.rounded {
+    background-color: darkred;
+    border-radius: 50px !important;
+    margin-left: .5rem;
+}
+
+.rounded:hover {
+    background-color: rgb(168, 8, 8);
+    font-weight: bold;
+}
+
+
+
+.size-input{
+    width: 8rem;
+}
+
+
+/*
+    ItemCount
+ */
+.inputbtn {
+    font-size: 1rem;
+    padding: 0;
+    text-align: center;
+    -moz-appearance:textfield;
+}
+
+.inputbtn::-webkit-outer-spin-button,
+.inputbtn::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.fondoBtnAddCount{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    padding:5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashPlus{
+    color: purple
+}
+
+.ItemCountContainer {
+    width: max-content;
 }
