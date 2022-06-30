@@ -33,11 +33,11 @@ function App() {
       <NavBar/>
       <h2>Todavia no se de que va a ser mi tienda <i className="bi bi-emoji-laughing"></i> !!!</h2>
       <img src="http://www.convengamostodos.com/img/enconstruccion.jpg" alt="Pagina en construccion" width="100%" />
-      <ItemListContainer greeting="Carlos"/>
-      <h4>Sin Stock</h4>
+      <ItemListContainer/>
+      {/* <h4>Sin Stock</h4>
       <ItemCount initial={1} stock={0} onAdd={onAdd}/>
       <h4>Stock de 5</h4>
-      <ItemCount initial={1} stock={5} onAdd={onAdd}/>
+      <ItemCount initial={1} stock={5} onAdd={onAdd}/> */}
     </>
   );
 }
