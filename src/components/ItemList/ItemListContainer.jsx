@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ItemList } from '../../components';
-import '../style.css'
+import '../style.css';
+import { useParams } from 'react-router-dom';
 
 
 const ItemListContainer = () => {
@@ -10,23 +11,27 @@ const ItemListContainer = () => {
     const [loading, setLoading]=useState(true);
     const [error, setError]=useState(false);
     
+    const { categoryId } = useParams();
 
-    const getProducts = async () => {
+    const getProducts = async (categoryId) => {
+        const URL = categoryId ? URL_PRODUCTS.concat(`/category/${categoryId}`) : URL_PRODUCTS;
+
         try{
-            fetch(URL_PRODUCTS)
+            fetch(URL)
             .then( res=> res.json() )
-            .then( json=> setProductList(json) )
+            .then( json=> setProductList(json))
         }catch(error){
-            console.log(error);       
+            console.log(error);
+            setLoading(false);       
             setError(true);
         }finally{
-            setLoading(false);
+            setLoading(false);  
         }
     }
 
     useEffect(()=>{
-        getProducts();
-    },[])
+        getProducts(categoryId);
+    },[categoryId])
 
 
     return (

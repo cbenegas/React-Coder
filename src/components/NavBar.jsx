@@ -1,6 +1,7 @@
 import './style.css';
-import CartWidget from './CartWidget';
-import React, {useState, useEffect} from 'react';
+import { CartWidget, Logo } from '../components';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 
 
@@ -18,7 +19,7 @@ const NavBar = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container-fluid">
-                <a className="navbar-brand" href="#"><CartWidget/></a>
+                <div className="navbar-brand" href="#"><Logo/></div>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -26,12 +27,16 @@ const NavBar = () => {
                     <ul className="navbar-nav">
                         { categories.map( (category) => { 
                             return (
-                                    <li className="nav-item" key={category}>
-                                        <a className="nav-link rounded" aria-current="page" href="#">{category}</a>
-                                    </li>
+                                    <Link to={`/category/${category}`} className="nav-item" key={category}>
+                                        <p className="nav-link rounded" >{category}</p>
+                                    </Link>
                                     )  
                             }) 
                         }
+                        {/* <Link to="/cart" className="nav-item">
+                            <CartWidget/>
+                        </Link> */}
+                        <CartWidget/>
                     
                     </ul>
                 </div>

@@ -4,7 +4,6 @@ import Swal from 'sweetalert2';
 
 const ItemDetail = ({product}) => {
     const { title, price, image, description } = product;
-    console.log(title, price, image, description);
     
     const onAdd = (count) => {
         const Toast = Swal.mixin({
@@ -29,7 +28,7 @@ const ItemDetail = ({product}) => {
     <div className="container">
         <div className="row shadow my-5">
             <div className="col-xs-12 col-md-5 my-4 mx-md-4 mx-0 shadow">
-                <img src={image} className="px-5 py-2 my-3 mx-auto d-block" alt={title} height="280px"/>
+                <img src={image} className="px-5 py-2 my-3 mx-auto d-block" alt={title} height="200px"/>
             </div>
             <div className="col-xs-12 col-md-6 my-4 shadow">
                 <div className="d-flex align-items-center flex-column pt-5 pb-3">

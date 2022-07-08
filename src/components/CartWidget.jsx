@@ -1,7 +1,12 @@
-import './style.css'
+import './style.css';
+import { Link } from 'react-router-dom';
 
 const CartWidget = () => {
-    return (<h2 className="logo">Mi tienda</h2>)
+    return (<Link to="/cart" id="cart"><i className="bi bi-cart3"></i><span id="cart-count">3</span></Link>)
+    // return (<>
+    //             <i className="bi bi-cart3"></i>
+    //             <span id="cart-count">3</span>
+    //         </>)
 }
 
 export default CartWidget

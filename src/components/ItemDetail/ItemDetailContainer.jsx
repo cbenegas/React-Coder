@@ -1,29 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import { ItemDetail } from '../../components';
+import { useParams } from 'react-router-dom';
 
 
 const ItemDetailContainer = () => {
 
-  const URL_PRODUCT = 'https://fakestoreapi.com/products/2';
+    const URL_PRODUCT = 'https://fakestoreapi.com/products/';
 
-  const [product, setProduct] = useState( {} );
-  const [loading, setLoading] = useState( true );
-  const [error, setError] = useState( false );
+    const [product, setProduct] = useState( {} );
+    const [loading, setLoading] = useState( true );
+    const [error, setError] = useState( false );
 
-  const getProduct = async () => {
-    try{
-        fetch(URL_PRODUCT)
-        .then( res => res.json() )
-        .then( json => setProduct( json ) )
-    }catch(error){
-        console.log(error);
-        setError(true);
-    }finally{
-      setLoading(false);
-    }
+    const { id } = useParams();    
+
+    const getProduct = async (id) => {
+        try{
+            fetch(URL_PRODUCT.concat(id))
+            .then( res => res.json() )
+            .then( json => setProduct( json ) )
+            setLoading(false);  
+        }catch(error){
+            setError(true);
+            setLoading(false);
+        }
 }
 
-useEffect( () => { getProduct() }, [] )
+useEffect( () => { getProduct(id) }, [] )
 
     return (
         <>
