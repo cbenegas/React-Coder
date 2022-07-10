@@ -2,7 +2,6 @@ import { Item } from '..';
 
 
 const ItemList = ({productList}) => {
-    console.log(productList)
     return (
         <div className="container">
             <h3 className="my-3">Lista de productos</h3>

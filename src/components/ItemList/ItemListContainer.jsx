@@ -19,14 +19,17 @@ const ItemListContainer = () => {
         try{
             fetch(URL)
             .then( res=> res.json() )
-            .then( json=> setProductList(json))
+            .then( json=> {setProductList(json);
+                setLoading(false);})
+
         }catch(error){
             console.log(error);
-            setLoading(false);       
             setError(true);
-        }finally{
-            setLoading(false);  
+            setLoading(false);       
         }
+        // }finally{
+        //     setLoading(false);  
+        // }
     }
 
     useEffect(()=>{

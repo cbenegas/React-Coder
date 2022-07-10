@@ -1,5 +1,6 @@
 import Cart from "./Cart";
 import CartWidget from "./CartWidget";
+import Checkout from "./Checkout";
 import Item from "./Item";
 import ItemCount from "./ItemCount";
 import ItemDetail from "./ItemDetail/ItemDetail";
@@ -12,6 +13,7 @@ import Logo from "./Logo";
 
 export { Cart,
         CartWidget, 
+        Checkout,
         Item,
         ItemCount,
         ItemDetail,
