@@ -8,11 +8,7 @@ const ItemDetail = ({product}) => {
     const { title, price, image, description } = product;
 
     const [checkout, setCheckout] = useState(false);
-    const { productsInCart, 
-            getQuantity, 
-            addProduct, 
-            removeProduct, 
-            clearAllProducts } = useContext( cartContext );
+    const { addProduct } = useContext( cartContext );
 
 
     const Toast = Swal.mixin({

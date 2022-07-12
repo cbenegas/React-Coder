@@ -15,9 +15,6 @@ const ItemDetailContainer = () => {
 
     const getProduct = async (id) => {
         try{
-            // fetch(URL_PRODUCT.concat(id))
-            // .then( res => res.json() )
-            // .then( json => setProduct( json ) )
             const res = await fetch( URL_PRODUCT.concat(id) );
             const json = await res.json();
             setProduct( json );
