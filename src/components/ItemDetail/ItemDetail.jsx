@@ -1,13 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react';
 import ItemCount from '../ItemCount';
 import Swal from 'sweetalert2';
 import Checkout from '../Checkout';
+import { cartContext } from '../../context';
 
 const ItemDetail = ({product}) => {
     const { title, price, image, description } = product;
 
     const [checkout, setCheckout] = useState(false);
-    
+    const { productsInCart, 
+            getQuantity, 
+            addProduct, 
+            removeProduct, 
+            clearAllProducts } = useContext( cartContext );
+
+
     const Toast = Swal.mixin({
         toast: true,
         position: 'top-end',
@@ -21,12 +28,12 @@ const ItemDetail = ({product}) => {
     })
 
 
-    const onAdd = (count) => {
-        
+    const onAdd = ( quantity ) => {
+        addProduct({...product, quantity});
         setCheckout(true);
         Toast.fire({
             icon: 'success',
-            title: `${title} agregado correctamente (cantidad: ${count})`
+            title: `${title} agregado correctamente (cantidad: ${quantity})`
         })
     }
 

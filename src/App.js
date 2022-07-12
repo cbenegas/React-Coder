@@ -5,20 +5,22 @@ import { Cart,
         ItemListContainer 
         } from './components';
 
+import { CartProvider } from './context';
 
 function App() {
 
 
     return (
         <BrowserRouter>
-            <NavBar/>
-            <Routes>
-                <Route path="/" element={<ItemListContainer/>} />
-                <Route path="/category/:categoryId" element={<ItemListContainer/>} />
-                <Route path="/item/:id" element={<ItemDetailContainer/>} />
-                <Route path="/cart" element={<Cart/>} />
-                
-            </Routes>
+            <CartProvider>
+                <NavBar/>
+                <Routes>
+                    <Route path="/" element={<ItemListContainer/>} />
+                    <Route path="/category/:categoryId" element={<ItemListContainer/>} />
+                    <Route path="/item/:id" element={<ItemDetailContainer/>} />
+                    <Route path="/cart" element={<Cart/>} />
+                </Routes>
+            </CartProvider>
         </BrowserRouter>
     );
 }

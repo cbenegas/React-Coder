@@ -17,19 +17,15 @@ const ItemListContainer = () => {
         const URL = categoryId ? URL_PRODUCTS.concat(`/category/${categoryId}`) : URL_PRODUCTS;
 
         try{
-            fetch(URL)
-            .then( res=> res.json() )
-            .then( json=> {setProductList(json);
-                setLoading(false);})
-
+            const res = await fetch( URL );
+            const json = await res.json();
+            setProductList(json);
         }catch(error){
             console.log(error);
-            setError(true);
-            setLoading(false);       
+            setError(true);       
+        }finally{
+            setLoading(false);  
         }
-        // }finally{
-        //     setLoading(false);  
-        // }
     }
 
     useEffect(()=>{
