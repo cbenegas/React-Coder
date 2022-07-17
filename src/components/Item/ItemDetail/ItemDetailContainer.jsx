@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { ItemDetail } from '../../components';
+import { ItemDetail } from '../../';
 import { useParams } from 'react-router-dom';
-
+import { HashLoader } from 'react-spinners';
+// import { db } from "../../firebase/firebase";
+// import { doc, getDocs, collection, where, getDoc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
 
@@ -12,6 +14,17 @@ const ItemDetailContainer = () => {
     const [error, setError] = useState( false );
 
     const { id } = useParams();    
+
+    // useEffect(() => {
+    //   const productsCollection = collection(db, 'products');
+    //   const refDoc = doc(productsCollection, id)
+    //   getDoc(refDoc)
+    //   .then(result => {
+    //     setProduct(result.data())
+    //   })
+
+    // }, [id])
+    
 
     const getProduct = async (id) => {
         try{
@@ -30,7 +43,7 @@ useEffect( () => { getProduct(id) }, [] )
     return (
         <>
             {
-                loading ? <p>Cargando...</p> 
+                loading ? <HashLoader className='position-absolute top-50 start-50 translate-middle'/>
                         : error ? <p>Ha ocurrido un error. Por favor, intente nuevamente mas tarde.</p>
                         : <ItemDetail product={product}/> 
             }

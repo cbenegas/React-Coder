@@ -2,11 +2,16 @@
     1. NavBar
     2. ItemCount
     3. Item
-    4. CartWidget
+    4. ItemDetail
+    5. CartWidget
 
 */
 
-
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none !important;
+}
 
 /* 
         1   NAVBAR 
@@ -22,27 +27,28 @@ h2{
 }
 
 
-.greeting {
-    margin-left: 2rem;
-    color: blue;
-    font-size: 1.3rem;
-}
 
 .rounded {
-    background-color: darkred;
     border-radius: 50px !important;
     margin-left: .5rem;
+    font-size: 1.2rem
 }
 
 .rounded:hover {
     background-color: rgb(168, 8, 8);
     font-weight: bold;
+    color: black;
 }
 
 .size-input{
     width: 8rem;
 }
 
+.active {
+    background-color: rgb(168, 8, 8);
+    font-weight: bold;
+    border-radius: 50px !important;
+}
 
 
 /*
@@ -74,7 +80,7 @@ h2{
 }
 
 .dashPlus{
-    color: purple
+    color: #084298
 }
 
 .ItemCountContainer {
@@ -95,7 +101,21 @@ h2{
 
 
 /*
-        4   CartWidget
+        4   ItemDetail
+    ============================
+ */
+.ImgItemDetail{
+    width: 100%;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.ItemDetailTitle {
+    color: #084298
+}
+
+/*
+        5   CartWidget
     ============================
  */
 
@@ -104,21 +124,21 @@ h2{
 }
 
 #cart i {
-    font-size: 18px;
+    font-size: 28px;
 }
 
 #cart-count {
-    height: 13px;
-	width: 13px;
+    height: 21px;
+	width: 21px;
 	background: #7fad39;
-	font-size: 10px;
+	font-size: 12px;
 	color: #ffffff;
-	line-height: 13px;
+	line-height: 20px;
 	text-align: center;
 	font-weight: 700;
 	display: inline-block;
 	border-radius: 50%;
 	position: absolute;
 	top: 0;
-	right: -3px;
+	right: -15px;
 }

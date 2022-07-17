@@ -1,14 +1,14 @@
-import Cart from "./Cart";
-import CartWidget from "./CartWidget";
+import Cart from "./Cart/Cart";
+import CartWidget from "./NavBar/CartWidget";
 import Checkout from "./Checkout";
-import Item from "./Item";
-import ItemCount from "./ItemCount";
-import ItemDetail from "./ItemDetail/ItemDetail";
-import ItemDetailContainer from "./ItemDetail/ItemDetailContainer";
-import ItemList from "./ItemList/ItemList";
-import ItemListContainer from "./ItemList/ItemListContainer";
-import NavBar from "./NavBar";
-import Logo from "./Logo";
+import Item from "./Item/Item";
+import ItemCount from "./Item/ItemCount";
+import ItemDetail from "./Item/ItemDetail/ItemDetail";
+import ItemDetailContainer from "./Item/ItemDetail/ItemDetailContainer";
+import ItemList from "./Item/ItemList/ItemList";
+import ItemListContainer from "./Item/ItemList/ItemListContainer";
+import NavBar from "./NavBar/NavBar";
+import Logo from "./NavBar/Logo";
 
 
 export { Cart,

@@ -1,7 +1,8 @@
-import './style.css';
-import { CartWidget, Logo } from '../components';
+import '../style.css';
+import CartWidget from './CartWidget';
+import Logo from './Logo';
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 
 
@@ -24,14 +25,14 @@ const NavBar = () => {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul className="navbar-nav">
+                    <ul className="navbar-nav align-items-center">
                         { categories.map( (category) => { 
                             return (
-                                    <Link to={`/category/${category}`} className="nav-item" key={category}>
-                                        <p className="nav-link rounded" >{category}</p>
-                                    </Link>
+                                    <NavLink to={`/category/${category}`} className="nav-item" key={category}>
+                                        <p className="nav-link rounded my-auto" >{category}</p>
+                                    </NavLink>
                                     )  
-                            }) 
+                            })
                         }
                         <CartWidget/>                  
                     </ul>

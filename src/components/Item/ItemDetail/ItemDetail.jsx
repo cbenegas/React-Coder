@@ -1,8 +1,9 @@
 import React, { useState, useContext } from 'react';
 import ItemCount from '../ItemCount';
 import Swal from 'sweetalert2';
-import Checkout from '../Checkout';
-import { cartContext } from '../../context';
+import Checkout from '../../Checkout';
+import { cartContext } from '../../../context';
+import '../../style.css';
 
 const ItemDetail = ({product}) => {
     const { title, price, image, description } = product;
@@ -36,13 +37,15 @@ const ItemDetail = ({product}) => {
     return (
         <div className="container">
             <div className="row shadow my-5">
-                <div className="col-xs-12 col-md-5 my-4 mx-md-4 mx-0 shadow">
-                    <img src={image} className="px-5 py-2 my-3 mx-auto d-block" alt={title} height="200px"/>
+                <div className="col-xs-12 col-md-5 my-4 mx-md-4 mx-0">
+                    <div className="d-flex align-items-center h-100"> 
+                        <img src={image} className="px-5 py-4 my-3 mx-auto d-block shadow ImgItemDetail" alt={title}/>
+                    </div>
                 </div>
-                <div className="col-xs-12 col-md-6 my-4 shadow">
+                <div className="col-xs-12 col-md-6 my-4 ">
                     <div className="d-flex align-items-center flex-column pt-5 pb-3">
-                        <h5 className="card-title text-center mt-3 mb-3 fs-1 text">{title}</h5>
-                        <div className="itemPrice mb-2 text-center fs-2 text">${price}</div>
+                        <h5 className="card-title text-center my-4 fs-1 ItemDetailTitle">{title}</h5>
+                        <div className="itemPrice mb-2 me-2 align-self-end fs-2 text">${price}</div>
                         <p className="mx-3">{description}</p>
                         {
                             checkout ? <Checkout/>

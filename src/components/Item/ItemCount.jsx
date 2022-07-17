@@ -25,7 +25,7 @@ const ItemCount = ({ initial=1, stock=10, onAdd }) => {
 
 
     return (
-        <div className="bg-light d-flex flex-column align-items-center justify-content-center py-3 px-2 ItemCountContainer">
+        <div className="d-flex flex-column align-items-center justify-content-center py-3 px-2 ItemCountContainer">
             <div className="input-group mb-3 size-input">
                 <i className="bi bi-dash-square-fill fs-5 me-2 dashPlus" onClick={handlerRemove}></i>
                 <input type="number" className="form-control bntAdd inputbtn" value={count} readOnly></input>
