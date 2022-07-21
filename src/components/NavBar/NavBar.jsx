@@ -3,19 +3,31 @@ import CartWidget from './CartWidget';
 import Logo from './Logo';
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import { db } from "../../firebase/firebase";
+import { getDocs, collection, query, where } from "firebase/firestore";
 
-
-
-const URL_CATEGORIES = 'https://fakestoreapi.com/products/categories';
+const DB_PRODUCTS = 'products';
+// const URL_CATEGORIES = 'https://fakestoreapi.com/products/categories';
+const productsCollection = collection( db, DB_PRODUCTS );
 
 const NavBar = () => {
     const [categories, setCategories] = useState([]);
 
-    useEffect(() => {
-        fetch(URL_CATEGORIES)
-            .then( res => res.json() )
-            .then( json => setCategories(json) )
+    const getCategories = async () => {
+        try{
+            const result = await getDocs(productsCollection);
+            const allCategories = await result.docs.map( product => product.data().category )
+            const uniquesCat = [ ...new Set(allCategories) ];
+            setCategories(uniquesCat);
+        }catch(error){
+            console.log(error); 
+        }
+    }
+
+    useEffect( () => {
+        getCategories()
     }, [] );
+
 
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">

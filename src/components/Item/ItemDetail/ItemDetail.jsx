@@ -6,7 +6,7 @@ import { cartContext } from '../../../context';
 import '../../style.css';
 
 const ItemDetail = ({product}) => {
-    const { title, price, image, description } = product;
+    const { title, price, image, description, stock } = product;
 
     const [checkout, setCheckout] = useState(false);
     const { addProduct } = useContext( cartContext );
@@ -49,7 +49,7 @@ const ItemDetail = ({product}) => {
                         <p className="mx-3">{description}</p>
                         {
                             checkout ? <Checkout/>
-                                     : <ItemCount initial={1} stock={10} onAdd={onAdd}/>
+                                     : <ItemCount initial={1} stock={stock} onAdd={onAdd}/>
                         }
                     </div>
                 </div>
