@@ -3,12 +3,11 @@ import { ItemList } from '../..';
 import '../../style.css';
 import { useParams } from 'react-router-dom';
 import { HashLoader } from 'react-spinners';
-import { db } from "../../../firebase/firebase";
+import { db, DB_PRODUCTS } from "../../../firebase/firebase";
 import { getDocs, collection, query, where } from "firebase/firestore";
 
 const ItemListContainer = () => {
     
-    const DB_PRODUCTS = 'products';
     const [productList, setProductList]=useState([]);
     const [loading, setLoading]=useState(true);
     const [error, setError]=useState(false);

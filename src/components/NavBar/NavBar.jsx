@@ -4,10 +4,9 @@ import Logo from './Logo';
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { db } from "../../firebase/firebase";
-import { getDocs, collection, query, where } from "firebase/firestore";
+import { getDocs, collection } from "firebase/firestore";
 
 const DB_PRODUCTS = 'products';
-// const URL_CATEGORIES = 'https://fakestoreapi.com/products/categories';
 const productsCollection = collection( db, DB_PRODUCTS );
 
 const NavBar = () => {

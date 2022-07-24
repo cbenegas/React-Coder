@@ -2,13 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { ItemDetail } from '../../';
 import { useParams } from 'react-router-dom';
 import { HashLoader } from 'react-spinners';
-import { db } from "../../../firebase/firebase";
+import { db, DB_PRODUCTS } from "../../../firebase/firebase";
 import { doc, collection, getDoc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
 
-    // const URL_PRODUCT = 'https://fakestoreapi.com/products/';
-    const DB_PRODUCTS = 'products';
     const [product, setProduct] = useState( {} );
     const [loading, setLoading] = useState( true );
     const [error, setError] = useState( false );

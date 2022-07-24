@@ -1,5 +1,5 @@
 import CardToCart from './CardToCart';
-import CartPay from './CartPay';
+import CartForm from './CartForm';
 import './styles.css';
 
 const CartContainer = ( { productsInCart, clearAllProducts } ) => {
@@ -18,7 +18,7 @@ const CartContainer = ( { productsInCart, clearAllProducts } ) => {
                     </div>  
                 </div>
                 <div className="col-xs-12 col-lg-6 my-4">
-                    <CartPay productsInCart={productsInCart}/>
+                    <CartForm productsInCart={productsInCart}/>
             </div>
             </div>
         </div>

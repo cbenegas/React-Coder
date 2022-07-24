@@ -17,4 +17,8 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
+export const DB_PRODUCTS = 'products';
+export const DB_SALES = 'sales';
+
 export const db = getFirestore(app);
