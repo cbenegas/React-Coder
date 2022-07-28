@@ -27,4 +27,4 @@ Esta es una página creada con fines didacticos, en la cual se desarrolla un e-c
 * SweetAlert2
 * React-Spinners
 
-Puedes ver su despliegue en [vercel](https://winestore-pi.vercel.app/)
+Puedes ver su despliegue en [vercel](winestore-cbenegas.vercel.app)
