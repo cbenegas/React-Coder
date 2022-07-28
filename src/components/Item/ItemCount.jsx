@@ -1,8 +1,8 @@
 
 import React, {useState} from 'react'
 
-const ItemCount = ({ initial=1, stock=10, onAdd }) => {
-    const [count, setCount] = useState(1);
+const ItemCount = ({ initial=1, stock=10, onAdd, showOnAdd=true }) => {
+    const [count, setCount] = useState(initial);
 
     const handlerRemove = () => {
         if (count > 1){

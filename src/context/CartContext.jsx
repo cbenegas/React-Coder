@@ -16,7 +16,7 @@ const CartProvider = ( { children } ) => {
     const addProduct = ( prod ) =>{
         if ( _isProductInCart( prod.id ) ){
             const updateProd = productsInCart.find( p => p.id === prod.id );
-            updateProd.quantity += prod.quantity;
+            updateProd.quantity = prod.quantity;
             const restProd = productsInCart.filter(p => p.id !== prod.id);
             setProductsInCart( [ ...restProd, updateProd] )
         }else {

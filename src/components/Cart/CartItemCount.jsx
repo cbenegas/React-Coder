@@ -1,25 +1,13 @@
-import React, { useState } from 'react'
 
 const CartItemCount = ({ initial=1, stock=10 }) => {
 
-    const [count, setCount] = useState(initial);
-
-    const handlerRemove = () => {
-        if (count > 1){
-            setCount(count - 1);
-        }
-    }
-
-    const handlerAdd = () => {
-        if (count < stock){
-            setCount(count + 1)
-        }
-    }
   return (
-    <div>
-        <p>Cantidad</p>
-        <span>{initial}</span>
-    </div>
+        <div className="d-flex flex-column align-items-center justify-content-center py-3 px-2 ItemCountContainer">
+            <div className="input-group mb-3 size-input">
+                <input type="number" className="form-control bntAdd inputbtn" value={initial} readOnly></input>
+            </div>
+            <p>Stock: {stock}</p>
+        </div>
   )
 }
 

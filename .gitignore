@@ -25,3 +25,6 @@ yarn-error.log*
 coder-ecomer-firebase-adminsdk-ivmjo-334759a146.json
 Wines.json
 LoadWines.js
+
+images/
+setupTests.js
