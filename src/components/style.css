@@ -98,6 +98,9 @@ h2{
 	font-weight: 700;
 }
 
+.ItemImage{
+    object-fit: contain;
+}
 
 
 /*

@@ -6,7 +6,7 @@ const CartItemCount = ({ initial=1, stock=10 }) => {
             <div className="input-group mb-3 size-input">
                 <input type="number" className="form-control bntAdd inputbtn" value={initial} readOnly></input>
             </div>
-            <p>Stock: {stock}</p>
+            <p className="align-self-start">Stock: {stock}</p>
         </div>
   )
 }

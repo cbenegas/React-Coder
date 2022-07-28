@@ -17,11 +17,11 @@ const CardToCart = ( { product } ) => {
             <div className="container">
                 <div className="row">
                     <div className="col-xs-12 col-md-4">
-                        <div className="d-flex align-items-center h-100">
+                        <div className="d-flex align-items-center justify-content-center h-100">
                             <Link to={`/item/${id}`}><img src={image} alt={title} className="ImgCardToCart shadow p-4 my-3 img-thumbnail"/></Link>
                         </div>
                     </div>
-                    <div className="col-xs-12 col-md-8 ps-3 d-flex flex-column">
+                    <div className="col-xs-12 col-md-8 ps-3 align-items-center align-items-md-start d-flex flex-column">
                         <Link to={`/item/${id}`}><h3 className="mt-4 ">{title}</h3></Link>
                         <p className="ItemDetailTitle fs6">{category}</p>
                         <h4>${price}</h4>
