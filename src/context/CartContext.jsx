@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect, useCallback } from 'react';
 
 export const cartContext = createContext();
 const { Provider } = cartContext;
@@ -8,9 +8,17 @@ const CartProvider = ( { children } ) => {
     const [ productsInCart, setProductsInCart ] = useState([]);
     const [quantityProd, setQuantityProd] = useState(0);
 
+
+    const _getQuantity = useCallback(() => {
+        let quantity = 0;
+        productsInCart.forEach( prod => quantity += prod.quantity);
+        setQuantityProd(quantity);
+        return quantity;
+    },[productsInCart])
+
     useEffect( () => {
         _getQuantity(); 
-    }, [ productsInCart ] );
+    }, [ productsInCart, _getQuantity ] );
     
 
     const addProduct = ( prod ) =>{
@@ -36,12 +44,7 @@ const CartProvider = ( { children } ) => {
         return productsInCart.some(prod => prod.id === id)
     }
 
-    const _getQuantity = () => {
-        let quantity = 0;
-        productsInCart.forEach( prod => quantity += prod.quantity);
-        setQuantityProd(quantity);
-        return quantity;
-    }
+    
 
     return (
         <Provider value={ { productsInCart, addProduct, removeProduct, clearAllProducts, quantityProd } }>
