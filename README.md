@@ -1,4 +1,4 @@
-# WineStore
+# Cava Online
 Esta es una página creada con fines didacticos, en la cual se desarrolla un e-comerce con React.
 
 
